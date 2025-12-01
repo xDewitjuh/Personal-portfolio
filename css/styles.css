@@ -11,7 +11,7 @@ body {
     background-color: #f8f9fa;
 
     /* background image with overlay */
-    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("images/Background.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("../Images/Background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
