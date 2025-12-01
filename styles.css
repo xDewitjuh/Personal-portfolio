@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+
+    /* background image with overlay */
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("images/Background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* remove on mobile if it causes issues: background-attachment: fixed; */
+    background-attachment: fixed;
+}
+/* Navbar */
+.navbar {
+    background-color: #C27CA1;
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0;
+    padding-left: 15px;
+    height: 50px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #C27CA1;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+.nav-menu li {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu li:last-child {
+    border-bottom: none;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    color: #3498db;
+}
+
+.hamburger-menu {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #a66788, #f5b5d9);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 600px;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Sections */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    border-bottom: 4px solid #C27CA1;
+    padding-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+    background-color: white;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #ecf0f1;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #C27CA1;
+}
+
+.personal-info p {
+    font-size: 1.1rem;
+}
+
+/* Education Section */
+.education {
+    background-color: white;
+}
+
+.cv-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.education h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-top: 1.5rem;
+}
+
+.education-list,
+.experience-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.education-list li,
+.experience-list li {
+    background-color: #ecf0f1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #C27CA1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-list li:hover,
+.experience-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.education-list h4,
+.experience-list h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.cv-download {
+    display: inline-block;
+    background-color: #C27CA1;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.cv-download:hover {
+    background-color: #e49fc4;
+}
+
+/* Hobbies Section */
+.hobbies {
+    background-color: white;
+}
+
+.hobbies-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.hobbies-list li {
+    background-color: #C27CA1;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hobbies-list li:hover {
+    background-color: #e49fc4;
+    transform: scale(1.05);
+}
+
+/* Projects Section */
+.projects {
+    background-color: white;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: white;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    color: #C27CA1;
+}
+
+.project-card a {
+    color: #C27CA1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #cf5393;
+}
+
+/* Internship Section */
+.internship {
+    background-color: #ecf0f1;
+}
+
+.internship-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #C27CA1;
+}
+
+.internship-content h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.internship-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* Contact Section */
+.contact {
+    background-color: white;
+    text-align: center;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.contact a {
+    color: #C27CA1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #e49fc4;
+}
