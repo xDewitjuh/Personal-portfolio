@@ -362,3 +362,112 @@ section h2 {
 .contact a:hover {
     color: #e49fc4;
 }
+
+/* Responsive Design - Media Queries */
+
+/* Tablet and smaller (768px and below) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1rem;
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .profile-photo {
+        width: 200px;
+        height: 240px;
+    }
+
+    section {
+        padding: 3rem 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    .personal-info {
+        padding: 1.5rem;
+    }
+
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        max-width: 100%;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .nav-container {
+        padding-left: 10px;
+    }
+
+    .nav-menu {
+        width: 180px;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+        min-height: 350px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 180px;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .personal-info {
+        padding: 1rem;
+    }
+
+    .personal-info p {
+        font-size: 1rem;
+    }
+
+    .hobbies-list {
+        justify-content: center;
+    }
+
+    .hobbies-list li {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .education-list li,
+    .experience-list li {
+        padding: 1rem;
+    }
+
+    .cv-download {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .internship-content {
+        padding: 1.5rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+    }
+}
